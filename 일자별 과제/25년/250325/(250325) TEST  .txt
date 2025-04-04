@@ -1,0 +1,24 @@
+
+class calculator
+{
+ 멤버변수 
+ private 	int i 
+	string s ;
+
+ 	 
+
+ public 멤버메쏘드 
+      void sum() 
+	
+};
+
+ calculator c(객체) = new calcultor;
+ //C++ JAVA  
+ 
+  c.int( i)
+  c. 	
+ 
+
+ k. int(i) 
+
+

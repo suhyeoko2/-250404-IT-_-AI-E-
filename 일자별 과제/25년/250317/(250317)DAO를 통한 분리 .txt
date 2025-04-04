@@ -1,0 +1,10 @@
+  
+     ServletContext sc = this.getServletContext();
+         conn = (Connection)sc.getAttribute("conn");
+         
+
+
+         OracleMemberDao memberDao = new OracleMemberDao();
+         memberDao.setConnection(conn);
+         
+         ArrayList<Member> members = (ArrayList<Member>)memberDao.selectList();

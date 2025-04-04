@@ -1,0 +1,7 @@
+task / url/  전송방식 / 파라미터 / Form/ URL 이름
+************************************
+전체목록 / board/list / get
+등록) /board/register / post / title,content,writer
+조회) /board/get /  get  / bno
+수정) /board/modify / post / title, content, writer, updatedate
+삭제) /board/remove / post / bno

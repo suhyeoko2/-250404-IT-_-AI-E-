@@ -1,0 +1,25 @@
+※신정희 선생님 구글독스) 
+  bit.ly/3QTwY4S
+
+
+
+
+
+MVC) Model-View-Control  : data관리는 모델에서 함.
+
+SW공학/SE(Soft Engineering) : 효율적&생산성
+ 개발단계 연구 
+
+※ 요구사항분석(현행업무분석, 요구사항분석) - 설계 (기본설계서&    ) - 구현(Development)&단위테스트   
+ - 테스트 - 배포 - 유지보수(6개월)
+
+신정희 강사님)
+프로젝트상 코딩은 1달 밖에 안함.
+
+- 분석-설계) Archeitecture 
+single tone pattern, design pattern
+
+※ 컬렉션 프레임워크 
+List : 목록, 저장된 순서있음. 중복가능,   LinkedList
+Set(집합) : 순서없음. 중복 안됨.           treeSet
+Map(지도) : 키/값 세트 ,                    HashMap             (Primary Key 중복되면 안 됨.) 

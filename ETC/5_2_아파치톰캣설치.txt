@@ -1,0 +1,24 @@
+* 웹어플리케이션 서버 Tomcat 설치
+cd ~/util
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.36/bin/apache-tomcat-10.1.36.tar.gz
+
+sudo tar -xvzf apache-tomcat-10.1.36.tar.gz     // 압축풀기 
+sudo mv apache-tomcat-10.1.36 tomcat          
+sudo chown -R student1:student1 tomcat
+cd tomcat/bin
+톰캣 구동
+./startup.sh
+
+
+
+
+*******ROOT.war 복사 *******
+
+cp /media/sf_/ROOT.war .     (마지막에 . 찍을 것)   //  media/sf_ /ROOT.war 파일을 복사한다는 의미 
+
+cp /meia/sf_/demo-0.0.1-snapshot-plain.war ROOT.war
+
+
+
+*** 공유폴더 위치 *******	
+C:\Work\03_AWS 입문\2_Docker\공유폴더

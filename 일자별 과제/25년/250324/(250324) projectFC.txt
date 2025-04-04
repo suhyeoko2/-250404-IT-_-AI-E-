@@ -1,0 +1,3 @@
+※projectFC 과제에서 list보는 법
+
+http://localhost:8989/projectFC2/project/list.do

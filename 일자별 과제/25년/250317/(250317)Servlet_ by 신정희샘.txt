@@ -1,0 +1,38 @@
+-서블릿 : @
+-필터
+-리스너 : 어떤 사건이 발생했을 때 감지해는 것.      action event
+-데이터 보관소
+
+ServletContext> HTTPSESSION > REQUEST> PAGE
+
+STEP1) : 서블릿  ONLY
+STEPE2) :  필터, Context-Param(태그,jdbc 정보 등록) -> CRUD 구현
+             뷰 분리 : DTO(※용어: VO, Domain)  : private 하게 선언, get&seter로 구현
+
+STEP3)  - AppInitServlet가 핵심. -> 자동실행 : connection 객체 생성하여 전 영역에 setting
+          -  conn 통제를 AppinitServlet이 함.
+          - 로그인 (Session에 저장)&아웃(Session 날리기)  ( Connection을 전역화단순화 sc)
+                  c.f) 로그아웃 함수)session.invalidate();
+
+※회원삭제) delete 
+
+M: Model(DB만듬) ->DAO(Data Access Obj.)-DB에 접근하는 역할 
+  SERVLET ( 요청받고 원하는 뷰에 위임하고)
+
+STEP4) : 모델분리 : DAO (Data Access Obj.) :DB 접근
+STEP5) : 리스너 사용/ EL/ JSTL 사용   
+*************************************************************************
+<JSP>
+<%@ page/taglib/include... >    // ⓐ page 지시문 들어가고 
+
+<%! 선언문>
+<% if(){ }..... %> : ⓑ스크립트 릿
+<%=name% > :   ⓒ 표현식, (name 뒤에 getter,setter올 수 있음.)
+
+- EL : Expression Language  $(m)   (내장된 기능)
+ex) Expression 
+
+- 서블릿 데이터보관소) ServletContext > HttpSession > ServletRequest > PageContext 
+- JSP 데이터보관소) application > session > request > page
+
+-JSTL : JSP Standard Tag Library 

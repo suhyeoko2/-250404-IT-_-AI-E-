@@ -1,0 +1,17 @@
+
+<ORACLE TNS Error 잡는법>
+
+C:\Users\HKIT>lsnrctl start
+
+LSNRCTL for 64-bit Windows: Version 11.2.0.2.0 - Production on 10-3월 -2025 18:49:55
+
+Copyright (c) 1991, 2014, Oracle.  All rights reserved.
+
+Starting tnslsnr: please wait...
+
+TNS-12560: TNS:protocol adapter error
+ TNS-00530: Protocol adapter error
+*********************************
+ORACLE Database 11g Express Edition 에러 해결 
+
+\D\oracle11gxe 에  다시깔기 

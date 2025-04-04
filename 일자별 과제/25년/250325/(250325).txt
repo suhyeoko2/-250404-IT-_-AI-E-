@@ -1,0 +1,41 @@
+Legacy prj.)
+
+<Spring.zip>
+sts3
+jdk-11
+tomcat 9
+workspace_sts-3: c:\
+-Legacy prj.& sprig MVC)    
+  - package 이름)  com.hkit.controller;
+
+<mapper namespace="com.hkit.mapper.TimeMapper">
+
+-------------------------------------------------------------
+<Mybatis, sql sessionfactory> vs < JDBC : Statement/RS/Connection conn>
+<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig" >
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" > </property>	
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe" > </property>
+		<property name="username" value="system" > </property>
+		<property name="password" value="oracle" > </property>	
+	</bean>
+	
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">	
+		<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>	
+	</bean>
+	
+	<mybatis-spring:scan base-package="com.hkit.mapper"></mybatis-spring:scan>
+	
+---------------------------------------
+
+<ROOTCONTEXT에 넣어주어야 함.>
+<mybatis-spring:scan base-package="com.hkit.mapper"></mybatis-spring:scan>
+
+
+<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" > </property>
+
+********************************
+ERROR 메시지) ERROR: org.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@68e965f5] to prepare test instance [com.hkit.persistence.TimeMapperTests@3abd581e]

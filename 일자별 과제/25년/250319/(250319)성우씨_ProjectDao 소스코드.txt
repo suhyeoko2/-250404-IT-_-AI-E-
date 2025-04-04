@@ -1,0 +1,260 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import dto.Member;
+
+public class OracleMemberDao implements MemberDao {
+   DataSource ds; // 객체주입
+   
+   public void setDataSource(DataSource ds) {
+      this.ds = ds;
+   }
+   
+
+   @Override
+   public List<Member> selectList() throws Exception {
+
+      // 필요한 객체 선언
+      Connection  conn = null;
+      Statement st = null;
+      ResultSet rs = null;
+      String query = null;
+      
+      // 객체 생성 및 쿼리문 생성
+      try {
+         conn=ds.getConnection();
+         st = conn.createStatement();
+         query = "select * from members order by mno desc";
+         rs = st.executeQuery(query);
+         
+         // 수행
+         
+         
+         // 결과반환
+         ArrayList<Member> members = new ArrayList<Member>();
+         
+         while(rs.next()) {
+            Member tmp = new Member();
+            tmp.setMno(rs.getInt("mno"));
+            tmp.setEmail(rs.getString("email"));
+            tmp.setMname(rs.getString("mname"));
+            tmp.setPwd(rs.getString("pwd"));
+            tmp.setCre_date(rs.getDate("cre_date"));
+            tmp.setMod_date(rs.getDate("mod_date"));
+            
+            members.add(tmp);
+      }
+         return members;
+      } catch(Exception e) {
+         throw e;
+      } finally {
+         //5. DB 해제
+         try {
+            if(rs != null) rs.close();
+            if(st != null) st.close();
+         }catch(Exception e) {
+            e.printStackTrace();
+         }
+      }
+   }
+   
+   
+
+   @Override
+   public int insert(Member member) throws Exception {
+      Connection  conn = null;
+      PreparedStatement pst = null;
+      String query = null;
+      try {
+         query = "insert into members values (seq_members.nextval, ?,?,?,sysdate,sysdate)";
+         conn=ds.getConnection();
+         pst = conn.prepareStatement(query);
+         pst.setString(1, member.getEmail());
+         pst.setString(2, member.getPwd());
+         pst.setString(3, member.getMname());
+         
+         return pst.executeUpdate();
+   } catch(Exception e) {
+      throw e;
+   } finally {
+      try {
+         if(pst != null) pst.close();
+      }catch(Exception e) {
+         e.printStackTrace();
+         }
+      }
+   }
+   
+   
+   
+   
+   
+   @Override
+   public int update(Member member) throws Exception {
+      Connection  conn = null;
+      PreparedStatement pst = null;
+      String query = null;
+      
+      try {
+         query = "update members set mname=?, email=?, mod_date=sysdate where mno=?";
+         conn=ds.getConnection();
+         pst = conn.prepareStatement(query);
+         pst.setString(1, member.getMname());
+         pst.setString(2, member.getEmail());
+         pst.setInt(3, member.getMno());
+         
+         return pst.executeUpdate();
+         
+      } catch (Exception e) {
+         throw e;
+      } finally {
+         try {
+            if(pst != null) pst.close();
+         }catch(Exception e) {
+            e.printStackTrace();
+         }
+      }
+      
+      
+      
+   }
+   
+   
+
+   @Override
+   public int delete(int mno) throws Exception {
+//      1. 객체선언
+      Connection  conn = null;
+      PreparedStatement pst = null;
+      String query = null;
+      
+//      2. try 만들기
+      try {
+         query = "delete from members where mno=?";
+         conn=ds.getConnection();
+         pst = conn.prepareStatement(query);
+         pst.setInt(1, mno);
+         
+         return pst.executeUpdate();
+         
+      } catch (Exception e) {
+         throw e;
+      } finally {
+         try {
+         if(pst != null) pst.close();
+      }catch(Exception e) {
+         e.printStackTrace();
+      }
+   }
+      
+      
+      
+   }
+   
+   
+
+   @Override
+   public Member selectOne(int mno) throws Exception {
+      Connection  conn = null;
+      PreparedStatement pst = null;
+      ResultSet rs = null;
+      String query = null;
+      
+      try {
+         query = "select * from members where mno = ?";
+         conn=ds.getConnection();
+         pst = conn.prepareStatement(query);
+         pst.setInt(1, mno);
+         
+         rs = pst.executeQuery();
+         
+         // rs에 있는 정보를 dto에 저장 후 request에 보관한뒤 view를 위임
+         // 여기에 있는 순번 그대로 jsp파일에 넣어야 한다 순번이 바뀌면 홈페이지가 안열림
+         if(rs.next()) {
+            Member member = new Member();
+            member.setMno(rs.getInt("mno"));
+            member.setMname(rs.getString("mname"));
+            member.setEmail(rs.getString("email"));
+            member.setPwd(rs.getString("pwd"));
+            member.setCre_date(rs.getDate("cre_date"));
+            member.setMod_date(rs.getDate("mod_date"));
+            
+            return member;   
+         } else {
+            throw new Exception("해당 정보를 찾을 수 없습니다.");
+         }
+      } catch (Exception e) {
+         throw e;
+         
+      } finally {
+         try {
+            if(rs != null) rs.close();
+            if(pst != null) pst.close();
+         }catch(Exception e) {
+            e.printStackTrace();
+         }
+      }
+      
+      
+      
+   }
+   
+   
+   
+   
+
+   @Override
+   public Member exist(String email, String pwd) throws Exception {
+      Connection  conn = null;
+      PreparedStatement pst = null;
+      String query = null;
+      ResultSet rs = null;
+      
+      try {
+         
+         query = "select * from members where email=? and pwd=?";
+         conn=ds.getConnection();
+         pst = conn.prepareStatement(query);
+         pst.setString(1, email);
+         pst.setString(2, pwd);
+         
+         rs = pst.executeQuery();
+         
+         if(rs.next()) {  
+            Member loginMember = new Member();
+            loginMember.setMno(rs.getInt("mno"));
+            loginMember.setEmail(rs.getString("email"));
+            loginMember.setMname(rs.getString("mname"));
+            loginMember.setPwd(rs.getString("pwd"));
+            loginMember.setCre_date(rs.getDate("cre_date"));
+            loginMember.setMod_date(rs.getDate("mod_date"));
+               
+            return loginMember;   
+            
+         }else {
+            return null;
+         }
+         
+      } catch (Exception e) {
+         throw e;
+         
+      } finally {
+         try {
+         if(rs != null) rs.close();
+         if(pst != null) pst.close();
+      }catch(Exception e) {
+         e.printStackTrace();
+      }
+         
+      
+   }
+   }
+}

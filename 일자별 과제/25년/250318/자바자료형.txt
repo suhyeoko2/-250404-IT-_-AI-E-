@@ -1,0 +1,18 @@
+※ 기본자료형 (8가지)
+byte(1)/short(2)/int(4byte, 20억)/long(8byte)    // 해서 정수는 int, 실수는 double
+float(4,소수점 )/double(8, 소수점 15자리)    //   
+boolean
+char
+ 
+
+※참조자료형: String, Integer, List, ArrayList
+
+
+PNO NUMBER
+PNAME VARCHAR2(50)
+CONTENT VARCHAR2(200)
+STARTDATE DATE
+ENDDATE DATE
+STATE NUMBER
+CREATEDATE
+TAGS VARCHAR2(50)

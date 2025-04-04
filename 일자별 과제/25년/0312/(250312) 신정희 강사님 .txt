@@ -1,0 +1,7 @@
+1. <HTML CSS JS 기본>   ( 부트스트랩  ), Javascript, jquery, 뷰, 리액트 , 타임리프
+2.  DB
+3. JAVA , SERVELET , JSP  MVC 패턴 , SPringframework, Springboot   // 2~3년 안에 쿠버네틱스 
+
+웹을 한 후에 , 
+MSA 구조 
+

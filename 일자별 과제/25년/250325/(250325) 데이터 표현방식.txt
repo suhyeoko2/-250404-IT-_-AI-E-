@@ -1,0 +1,11 @@
+<Data 표현방식>
+
+-XML, 데이터  태그가 많아 복잡  <?@   >
+-JSON : JavaScript Object Notation    // 자바에서 활용 못하기 때문에 dependency 걸어주어야 함.
+  {
+    "name"  : "신정희",
+    "age" 	: 10
+    } 
+
+  
+CSV : 빅데이터 / 머신러닝 딥러닝에서 씀.

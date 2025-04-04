@@ -1,0 +1,22 @@
+DTO)Data Transfer Object
+
+
+/WEB-INF/classes/servlets/MemberDeleteSevlet_OLD
+conn>>>>>oracle.jdbc.driver.T4CConnection@274860a3    // hash tag
+
+
+
+response.setContentType("text/html; charset=utf-8");
+
+RequestDispatcher rd = request.getRequestDispatcher("/member/MemberAddform.jsp");  //.jsp파일에 위임할 거야
+
+//
+
+1. memberStep2 
+  update
+ deleter  에서 null parsing 못 시킴. why?
+
+
+//주요 에러
+1) null point exception 
+2) parse int 에러 

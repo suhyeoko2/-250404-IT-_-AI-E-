@@ -1,0 +1,20 @@
+1) DB - members
+2) mybatis - mapper -> CRUD 단위테스트
+3) service -> 단위테스트 
+4) controller -> mockMVC     // POSTMAN으로 하기도 하는데 코드로 테스트
+5) VIEW
+
+**********************
+<평가과제> 포트폴리오 
+1. 자바는 필기시험 
+2. 결과물 캡쳐 -- PPT, 소스코드 받는다. 
+3. 오전 4hr 
+
+
+public List<MemberVO> getList();
+	public void insert(MemberVO member);
+	public void insertSelectKey(MemberVO member); //SEQUENCE 번호 받아옴.
+	public MemberVO read(long mno);  
+	public int delete(long mno);                  
+	public int update(MemberVO member);     
+}

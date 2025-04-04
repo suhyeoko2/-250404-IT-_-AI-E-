@@ -1,0 +1,58 @@
+※신정희 선생님 구글독스) 
+  bit.ly/3QTwY4S
+
+
+<메뉴구조>
+- membersStep1 에서 
+
+protected void do GET( HttpServletRequest request, HttpServletResponse  response)
+response.setContent
+
+PrintWriter out = response.getWriter();
+	out.print("<html><head><title>회원목록</title></head>");
+	out.print("<body><h1>회원목록</h1><a href=''>신규등록</a><hr>");
+	
+	
+ 	
+{
+
+
+protected void doPost( HttpServletRequest request, HttpServletResponse  response)
+  //화면에서 전송된 정보를 db에 저장.
+//1. 전송된 정보 저장. 
+  String mname = request.getParaemter(  " mname");
+   String mname = request.getParaemter(  " mname");
+
+
+--------------------------------------------------------
+<250311> 11:00이후, 
+<create members   6개 칼럼)
+mno
+pwd
+email
+mname
+
+connection conn=null;
+Statement st = null;
+String query = null;
+
+try{
+    //1. 드라이버 로딩	
+   Class.forName( " oracle.jdbc.driver.OracleDriver");
+   DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe, "system","oracle");
+   query  =  "Insert into members valuses  (seq_members.nextval, ?,?,?,?,?  ) "  ;    //변수 있는 곳은 6개 컬럼명
+  pst = conn.prepareStatement (query);
+  pst.set
+	
+ conn.prepareStatement 
+
+} catch (Exception e) {
+	e.printStackTrace();
+}finally {
+
+
+}
+ 
+
+}
+

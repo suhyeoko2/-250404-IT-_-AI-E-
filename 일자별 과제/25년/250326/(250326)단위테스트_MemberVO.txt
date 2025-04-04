@@ -1,0 +1,11 @@
+<Spring 계층>
+
+1)Presentation 계층 (화면 계층)
+2)Business 계층      (서비스 계층, 로직 측면)
+3)Persistence 계층 (data access계층, repository 계층)
+
+
+..
+1. TESTUPDATE --> FAIL 
+2. TESTDELETE ---> SUCCESS
+3. TESTINSERT

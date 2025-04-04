@@ -1,0 +1,12 @@
+1. DB)  TABLE 생성 -> 테스트 데이터 5개
+2. 신규프로젝트 생성 
+    1) pom.xml,  web.xml , root-context.xml setting
+    2)VO (Domain Package 생성) , lombok 써서 getter/setter 생성
+    3)Persistence 계층 인터페이스 생성)  
+          Mybatis Mapper 인터페이스, xml -> root-context.xml 
+       ====> 단위 테스트 ( 녹색불, 로고 콘솔에 찍혀야 함) 
+    4) service ) service.java & serviceImpl.java 생성 후 단위테스트 
+    5) controller -> mockMVC 단위테스트 
+    6) view 
+
+※ 복/붙은 지양할 것. 

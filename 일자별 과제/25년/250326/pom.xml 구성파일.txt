@@ -1,0 +1,6 @@
+ 
+※ pom.xml에서 설정시 고려사항 
+
+-mybatis) 3.5.10  
+-mybatis - spring ) 2.0.7
+-jdk - 11과 호환 

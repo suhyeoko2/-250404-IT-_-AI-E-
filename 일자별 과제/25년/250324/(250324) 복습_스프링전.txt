@@ -1,0 +1,24 @@
+-서블릿) Interface, AppInitServlet (자동으로 구동, 1 )
+
+필터) 
+-listener) Data 삭제/추가 -- 보관소 (SC, Session Request > page)
+   - Application 구동될 때 Controller 만들고 객체준비함. 
+   - ContextLoadListener 가 AppinitServlet 대신함. 
+
+서블릿 - view 추출(JSP)  <%@ ! =  
+  EL(Expression Language) ${객체명.참조변수 }, ${객체명.멤버 } : 조건문을 empty 정도만 씀
+  JSTL(Java Servlet Tag library)                      :<c:    <fmt: 
+  
+서블릿 - Model 분류 -> DAO, DTO 
+MVC 패턴 만듬. 
+
+MVC(요청 받아 존재) -> FC(Dispatcher servlet) -  MVC(Page controller,일반콘트롤러)
+
+@WebServlet("/*.do") , add.do, update.do, delete.do로 모음
+
+
+- MVC ServletRequestDatabinding이 해주고 있음.
+
+
+fcmemberStep3)
+http://localhost:8989/fcmemberStep3/member/list.do

@@ -1,0 +1,17 @@
+JDK
+
+이클립스 
+톰캣 :WAS (CONTAINER)
+
+서블릿 -> JSP -> MVC  // 이 과정 중요 
+JSP -> 뷰단 
+오라클 
+
+
+JDBC: 
+
+
+'MVC를 알아야 SPRING BOOT로 가야 함. '
+
+
+SPRINGBOOT가 ANNOTATION만듬. 

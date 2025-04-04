@@ -1,0 +1,62 @@
+※ Spring boot > 오픈 Legacy prj. > 템플릿 SPRING MVC 
+
+Legacy prj.)
+
+<Spring.zip>
+(Compatible version)
+-sts3
+-jdk-11
+-tomcat 9
+workspace_sts-3: c:\
+-Legacy prj.& sprig MVC)    
+  - package 이름)  com.hkit.controller;
+
+<mapper namespace="com.hkit.mapper.TimeMapper">
+
+-------------------------------------------------------------
+<Mybatis, sql sessionfactory> vs < JDBC : Statement/RS/Connection conn>
+<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig" >
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" > </property>	
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe" > </property>
+		<property name="username" value="system" > </property>
+		<property name="password" value="oracle" > </property>	
+	</bean>
+	
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">	
+		<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>	
+	</bean>
+	
+	<mybatis-spring:scan base-package="com.hkit.mapper"></mybatis-spring:scan>
+	
+-----------------------------------------------------------------------------------------------------------
+
+<ROOTCONTEXT에 넣어주어야 함.>
+<mybatis-spring:scan base-package="com.hkit.mapper"></mybatis-spring:scan>
+
+
+<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" > </property>
+
+*******************************************************************************************
+ERROR 메시지) ERROR: org.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@68e965f5] to prepare test instance [com.hkit.persistence.TimeMapperTests@3abd581e]
+
+
+
+**************************************************************************************************
+<@getmapping 하면서 url get방식 확인하기 위해 키인하는 코드>
+http://localhost:8989/sample/dex02Bean?list%5B0%5D.name=aaa&list[1].name=bbb
+http://localhost:8989/sample/ex02Array?ids=111&ids=222&ids=333@ids=444
+http://localhost:8989/sample/ex03?title=eat&dueDate=2025/03/25
+
+
+http://localhost:8989/sample/ex04?name=abcd&age=17&page=7    //  SampleController.java에서 
+http://localhost:8989/sample/ex05    // SampleController.java에서
+******************************************************************************
+매개변수의 첫번째 글자만 소문자로 JSP에 활용
+
+
+C:\upload\tmp
+

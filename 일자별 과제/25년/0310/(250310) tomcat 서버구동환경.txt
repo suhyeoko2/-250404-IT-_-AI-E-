@@ -1,0 +1,36 @@
+
+▷JDBC 연결법
+
+0. 드라이버 -> lib
+1. 드라이버로딩  (DriverManager)
+2. DB연결
+3. STATEEMENT 객체 생성 -> Execute, -> 결과 - 처리 
+4. DB 해제  -> 나중에 생성한 객체부터 close()
+
+
+▷CRUD)
+Create, Read, Update, Delete
+
+▷ hello.jsp (jsp는 서블릿) -> hello_jsp.java -> hello.jsp  // jsp는  
+ 
+
+▷ 전송방식
+ GET : URL 직접 입력요청, a 태그 요청(ex; a href ) , 
+<form method='get' or 'POST' 방식 선택가능>
+
+POST: 이미지 전송 or form tag에서 쓰임. 
+
+SecondServlet 
+▷
+ 설치: JDK 17, Eclipse EE, Tomcat 10
+IDE) Integrated Development Environment. 
+IDE+ TOMCAT ->
+
+
+▷ servlet) 서블릿 인터페이스, 생명주기 servlet
+   - init() 
+   - destory()
+   - service()
+_______________________________________________________________
+
+TOMCAT이 WAS(Container 환경)에서 사용함. 

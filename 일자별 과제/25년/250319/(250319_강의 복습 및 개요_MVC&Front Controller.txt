@@ -1,0 +1,12 @@
+
+※ Servlet -> MVC 패턴 -> FC(front Controller) MVC
+             
+
+ Context Load Listener(DAO)가 DAO를 만들어 FC에 전달
+
+--> FC(FrontController,  *.do : URL 매핑,   Dispatcher Servlet : 스프링에서는 setting되어 있음) 
+                Map <model> 
+--> PC(Page Controller ) --> DAO(Data Access Obj) -->DB 
+
+
+JSP (Servlet) 

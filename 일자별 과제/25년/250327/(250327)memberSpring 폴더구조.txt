@@ -1,0 +1,9 @@
+1. src/main/java
+ com.aiweb.controller
+ com.aiweb.domain
+ com.aiweb.mapper
+ com.aiweb.service
+
+2. src/main/resources
+  com>aiweb>mapper 
+    - BoardMapper.xml

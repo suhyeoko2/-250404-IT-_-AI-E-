@@ -1,0 +1,26 @@
+<신정희 선생님말씀>
+
+-DI IOC(Inversion of C  ) : 스프링이 만든 객체풀 씀.
+
+- POM.XML/ Servlet-context.xml/Root-context.xml/web.xml 언제 쓰이는지 파악
+
+********************************************************************************************
+1. Presentation 계층(표현,화면)  @Controller & view
+2. Business 계층(서비스 : 비즈니스 로직)  @Service
+3. Persistence 계층(데이터,영속) : DAO 를 쓰는 것이 MyBatis(Mapper I/F & XML 씀,)
+
+
+
+- 국비교육 수료증 아무 의미 없음.
+
+-2급 산업기사
+-1급 기사
+
+-SCJP->OCJP(X)
+-리눅스 마스터 1급/2급(O)
+-빅데이터 분석기사 // 4년제 나와야 칠 수 있음.
+
+-ADSP(준분석기사) > ADP( 분석기사, 합격률 3%  )   //DB 분석
+
+-포트폴리오/자격증
+- 정보처리기사 < 지게차
